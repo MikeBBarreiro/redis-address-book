@@ -1,0 +1,17 @@
+extends ../shared/template
+block content
+  h2 User login
+  .row
+    .col-xs-4
+    .col-xs-4
+      form(role='form', method='post', action='/login')
+        .form-group
+          label(for='email') Email
+          input.form-control#email(type='email', name='email', autofocuz=true)
+        .form-group
+          label(for='password') Password
+          input.form-control#pass(type='password', name='password')
+        button.btn.btn-primary(type='submit') Login
+      .col-xs-4
+
+block scripts
