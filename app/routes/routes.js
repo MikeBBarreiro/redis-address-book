@@ -44,8 +44,10 @@ module.exports = function(app, express){
 //this only allways somone who is loged to see this page
   app.use(security.bounce);
 
-  app.get('/logout', users.logout);
+  app.delete('/logout', users.logout);
   app.get('/adresses', adresses.index);
+  app.post('/adresses', adresses.create);
+  app.get('/adresses/new', adresses.init);
 
   console.log('Express: Routes Loaded');
 };

@@ -1,0 +1,22 @@
+extends ../shared/template
+block content
+
+  .row
+    .col-xs-4
+    .col-xs-4
+
+      form(role='form', method='post', action='/adresses')
+        .form-group
+          label(for='name') Name
+          input.form-control#name(type='text', name='name', autofocuz=true)
+        .form-group
+          label(for='color') Choose A Color
+          input.form-control#color(type='color', value='#00ff00', name='color')
+        .form-group
+          label(for='twitter') Twitter
+          input.form-control#twitter(type='text', name='twitter')
+
+        button.btn.btn-primary(type='submit') Create
+    .col-xs-4
+
+block scripts

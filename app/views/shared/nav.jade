@@ -11,12 +11,25 @@
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right
         if user
-          li: a(href='#') #{user ? user.email : 'Anonymous'}
-          li: a(href='/logout') Sign Out
-          li: a(href='/adresses') Adresses
-
+          li: a(href='/adresses') Address Book
+          li: a(href='/adresses/new') New Address
+          li
+            form.navbar-form(method='post', action='/logout')
+              .form-group
+                input(type='hidden', name='_method', value='delete')
+                button.btn.btn-danger= user.email
         else
-          li: a(href='/register') Sign up
+          li: a(href='/register') Register
           li: a(href='/login') Login
+
+//if user
+  li: a(href='#') #{user ? user.email : 'Anonymous'}
+  li: a(href='/logout') Sign Out
+  li: a(href='/adresses') Adresses
+  li: a(href='/adresses/new') Create Address
+
+  else
+    li: a(href='/register') Sign up
+    li: a(href='/login') Login
 
 

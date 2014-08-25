@@ -3,7 +3,10 @@
 var bcrypt = require('bcrypt'),
     Mongo  = require('mongodb');
 
-function User(){
+function User(a){
+  this.name = a.name;
+  this.color = a.color;
+
 }
 
 Object.defineProperty(User, 'collection', {
